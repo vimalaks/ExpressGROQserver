@@ -23,7 +23,7 @@ app.post('/prompt',async(req,res,next)=>
         messages: [{ role: 'user', content: req.body.prompt }],
         model: 'llama3-8b-8192',
       });
-      res.status(200).json({response:chatCompletion['choices[0].message.content']});
+      res.status(200).json({response:chatCompletion.choices[0].message.content});
 });
 app.listen(PORT,()=>
 {

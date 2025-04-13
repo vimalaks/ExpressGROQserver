@@ -6,7 +6,8 @@ import Groq from 'groq-sdk';
 const client = new Groq({
     apiKey: process.env['GROQ_API_KEY'], // This is the default and can be omitted
   });
-const dotenv = require('dotenv');
+//const dotenv = require('dotenv');
+import dotenv from 'dotenv';
 const { APIClient } = require('groq-sdk/core');
 dotenv.config();
 const PORT = 8000;

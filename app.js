@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
-const GROQ = require('groq-sdk');
+//const GROQ = require('groq-sdk');
+import Groq from 'groq-sdk';
 const client = new Groq({
     apiKey: process.env['GROQ_API_KEY'], // This is the default and can be omitted
   });

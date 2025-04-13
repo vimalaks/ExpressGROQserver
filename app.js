@@ -8,13 +8,13 @@ const dotenv = require('dotenv');
 const { APIClient } = require('groq-sdk/core');
 dotenv.config();
 const PORT = 8000;
-
+app.use(express.json());
 app.get('/test',(req,res,next)=>
 {
     console.log("Get api is accessed");
     res.status(200).json({msg:'GET api is successfully accessed'});
 });
-app.post('/prompt',(req,res,next)=>
+app.post('/prompt',async(req,res,next)=>
 {
     const chatCompletion = await client.chat.completions.create({
         messages: [{ role: 'user', content: req.body.prompt }],

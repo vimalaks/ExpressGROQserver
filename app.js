@@ -17,7 +17,7 @@ app.get('/test',(req,res,next)=>
 app.post('/prompt',(req,res,next)=>
 {
     const chatCompletion = await client.chat.completions.create({
-        messages: [{ role: 'user', content: 'Explain the importance of low latency LLMs' }],
+        messages: [{ role: 'user', content: req.body.prompt }],
         model: 'llama3-8b-8192',
       });
       res.status(200).json({response:chatCompletion['choices[0].message.content']});
@@ -25,5 +25,5 @@ app.post('/prompt',(req,res,next)=>
 app.listen(PORT,()=>
 {
     console.log(`Server is up and running and listening @ ${PORT}`);
-    console.log(process.env['GROQ_API_KEY']);
+    //console.log(process.env['GROQ_API_KEY']);
 });

@@ -8,7 +8,7 @@ const client = new Groq({
   });
 //const dotenv = require('dotenv');
 import dotenv from 'dotenv';
-const { APIClient } = require('groq-sdk/core');
+//const { APIClient } = require('groq-sdk/core');
 dotenv.config();
 const PORT = 8000;
 app.use(express.json());
